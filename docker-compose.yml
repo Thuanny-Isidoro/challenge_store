@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  mysql-database:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: challenge_store_db
+      MYSQL_USER: challenge_store_user
+      MYSQL_PASSWORD: "@Battousai1"
+      MYSQL_ROOT_PASSWORD: "@Battousai1"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
